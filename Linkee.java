@@ -1,6 +1,6 @@
 import java.util.List;
 /**
- * Décrivez votre classe Linkee ici3.
+ * Décrivez votre classe Linkee ici.
  *
  * @author (Group 3 -TESSIER)
  * @version (15)
