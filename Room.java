@@ -13,7 +13,113 @@ public class Room
     private Enemy enemy;
     private HashMap<String, Room> exits;
     
+private void createRooms()
+   {
+       Room desert, entree, momification, hieroglyphes, tresor, scarabe, enigme, chambre, tombeau;
+       // create the rooms
+       desert = new Room("dans le désert");
+       entree = new Room("dans la pyramide du Pharaon");
+       momification = new Room("dans la salle de momification");
+       hieroglyphes = new Room("dans la salle des hieroglyphes");
+       tresor = new Room("dans la salle des tresors");
+       scarabe = new Room("dans la salle des scarabes");
+       enigme = new Room("etes dans la salle des enigmes");
+       chambre = new Room("dans la chambre du pharaon");
+       tombeau = new Room("dans le tombeau du Pharaon");
+              // initialise room exits
+       desert.setExits(entree, null, null, null);
+       entree.setExits(null, momification, desert, hierogliphes);
+       momification.setExits(enigme, tresor, null, entree);
+       hieroglyphes.setExits(null, entree, null, null);
+       tresor.setExits(null, entree, null, momification);
+       enigme.setExits(chambre, scarabe, momification, null);
+       scarabe.setExits(null, null, null, enigme);
+       chambre.setExits(tombeau, null, enigmel, null);
+       tombeau.setExits(sortie, null, null, null);
+       currentRoom = desert;  // start game outside
+   }
 
+
+private void printWelcome()
+   {
+       System.out.println();
+       System.out.println("Bienvenue dans Linkee et la légende du diamant");
+       System.out.println("Linkee et la légende du diamant est un formidable jeu d'aventure");
+       System.out.println("Type'help' if you need help.");
+       System.out.println();
+       System.out.println("Vous etes " + currentRoom.getDescription());
+       System.out.print("Exits: ");
+       if(currentRoom.northExit != null)
+           System.out.print("north ");
+       if(currentRoom.eastExit != null)
+           System.out.print("east ");
+       if(currentRoom.southExit != null)
+           System.out.print("south ");
+       if(currentRoom.westExit != null)
+           System.out.print("west ");
+       System.out.println();
+   }
+
+
+private void printLocationInfo ()
+   {
+      System.out.println("Vous etes " + currentRoom.getDescription());
+       System.out.print("Exits: ");
+       if(currentRoom.northExit != null)
+           System.out.print("north ");
+       if(currentRoom.eastExit != null)
+           System.out.print("east ");
+       if(currentRoom.southExit != null)
+           System.out.print("south ");
+       if(currentRoom.westExit != null)
+           System.out.print("west ");
+       System.out.println();
+   }
+
+
+
+public Room getExit (String direction)
+   {
+       if (direction.equals("north"))
+       {
+           return northExit;
+       }
+        if (direction.equals("east"))
+       {
+           return eastExit;
+       }
+        if (direction.equals("south"))
+       {
+           return southExit;
+       }
+        if (direction.equals("west"))
+       {
+           return westExit;
+       }
+       return null;
+   }
+
+Room nextRoom = currentRoom.getExit(direction);
+
+
+public String getExitString(){
+String exit = "Exits: ";
+if(northExit !=null)
+exit +="north";
+if(eastExit != null)
+exit +="east";
+if(southExit != null)
+exit+="south";
+if(westExit != null)
+exit +="west";
+return exit;
+}
+
+//public String getLongDescription()
+  // {
+  //     return "Vous etes " + description + " "  + getExitString()
+  //  }
+    
     /**
      * Constructeur d'objets de classe Room
      */
