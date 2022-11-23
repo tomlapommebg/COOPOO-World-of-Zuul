@@ -27,7 +27,7 @@ this.aName=pName;
    public String getLongDescription()
    {
        return this.aDescription + " de " + this.aPoids + " kg";
-   }*/
+   }
    public void setDescription(final String pDescription)
    {
        this.aDescription = pDescription;
@@ -68,11 +68,11 @@ public void addItem(final String pName, final Item pItem)
    }
 
 
-tombeau.addItem("Diamant",new Item(4,"brillant","Diamant"));
-momification.addItem("Corde",new Item(4,"sortie","Corde"));
-momification.addItem("Epee",new Item(4,"degat","Epee"));
-momification.addItem("Potion",new Item(4,"vie","Potion"));
-chambre.addItem("Key",new Item(4,"debloque","Key"));
+//tombeau.addItem("Diamant",new Item(4,"brillant","Diamant"));
+//momification.addItem("Corde",new Item(4,"sortie","Corde"));
+//momification.addItem("Epee",new Item(4,"degat","Epee"));
+//momification.addItem("Potion",new Item(4,"vie","Potion"));
+//chambre.addItem("Key",new Item(4,"debloque","Key"));
 
     /**
      * Constructor of the object from the Item class
