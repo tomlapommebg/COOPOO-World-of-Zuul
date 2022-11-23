@@ -21,7 +21,9 @@ public class Linkee
     /**
      * Constructor for objects of class Linkee 
      */
-    public Linkee()
+    public Linkee(final String pName, final double pCaracteristiquePoids, final Room
+pCurrentRoom )
+
     {
         // initialise instance variables
        Name = pName;
